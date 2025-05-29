@@ -1,0 +1,14 @@
+{
+  "kind": "collectionType",
+  "collectionName": "main_navigations",
+  "info": {
+    "singularName": "main-navigation",
+    "pluralName": "main-navigations",
+    "displayName": "Main Navigation"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {}
+}

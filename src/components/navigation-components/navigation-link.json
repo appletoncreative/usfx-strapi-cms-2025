@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_navigation_components_navigation_links",
+  "info": {
+    "displayName": "Navigation Link"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "article": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::article.article"
+    }
+  },
+  "config": {}
+}
