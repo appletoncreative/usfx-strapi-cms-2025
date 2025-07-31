@@ -1,0 +1,48 @@
+{
+  "collectionName": "components_shared_image_with_text_sections",
+  "info": {
+    "displayName": "Image with Text Section",
+    "icon": "apps"
+  },
+  "options": {},
+  "attributes": {
+    "AlignImageLeft": {
+      "type": "boolean",
+      "default": true
+    },
+    "Image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "ImageBorderColor": {
+      "type": "enumeration",
+      "required": true,
+      "default": "storm-light",
+      "enum": [
+        "storm-light",
+        "lemongrass-light",
+        "teal-light"
+      ]
+    },
+    "SubHeading": {
+      "type": "string"
+    },
+    "Heading": {
+      "type": "string"
+    },
+    "Text": {
+      "type": "blocks"
+    },
+    "Button": {
+      "type": "component",
+      "component": "shared.button",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}
