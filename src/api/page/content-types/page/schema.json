@@ -13,25 +13,19 @@
   "attributes": {
     "Title": {
       "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "Slug": {
+      "type": "uid",
+      "targetField": "Title",
       "required": true
     },
     "SeoDescription": {
       "type": "text"
     },
-    "HeroBanner": {
-      "type": "component",
-      "component": "shared.hero-banner",
-      "repeatable": false
-    },
-    "StatCalloutSection": {
-      "type": "component",
-      "component": "shared.stat-callout-section",
-      "repeatable": true
-    },
-    "ImageWithTextSection": {
-      "type": "component",
-      "component": "shared.image-with-text-section",
-      "repeatable": true
+    "Content": {
+      "type": "blocks"
     }
   }
 }
