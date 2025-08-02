@@ -1,5 +1,5 @@
 {
-  "kind": "collectionType",
+  "kind": "singleType",
   "collectionName": "main_navigations",
   "info": {
     "singularName": "main-navigation",
@@ -10,5 +10,11 @@
     "draftAndPublish": false
   },
   "pluginOptions": {},
-  "attributes": {}
+  "attributes": {
+    "TopLevelLink": {
+      "type": "component",
+      "component": "navigation-components.navigation-link",
+      "repeatable": true
+    }
+  }
 }

@@ -6,12 +6,17 @@
   "options": {},
   "attributes": {
     "Title": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
-    "article": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::article.article"
+    "Url": {
+      "type": "string",
+      "required": true
+    },
+    "SubNavigationLink": {
+      "type": "component",
+      "component": "navigation-components.sub-navigation-link",
+      "repeatable": true
     }
   },
   "config": {}

@@ -24,6 +24,14 @@
     "SeoDescription": {
       "type": "text"
     },
+    "BannerImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
     "Content": {
       "type": "blocks"
     }

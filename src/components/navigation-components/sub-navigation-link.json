@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_navigation_components_sub_navigation_links",
+  "info": {
+    "displayName": "Sub Navigation Link",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Url": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

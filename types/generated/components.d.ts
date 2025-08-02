@@ -7,8 +7,25 @@ export interface NavigationComponentsNavigationLink
     displayName: 'Navigation Link';
   };
   attributes: {
-    article: Schema.Attribute.Relation<'oneToOne', 'api::article.article'>;
+    SubNavigationLink: Schema.Attribute.Component<
+      'navigation-components.sub-navigation-link',
+      true
+    >;
+    Title: Schema.Attribute.String & Schema.Attribute.Required;
+    Url: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface NavigationComponentsSubNavigationLink
+  extends Struct.ComponentSchema {
+  collectionName: 'components_navigation_components_sub_navigation_links';
+  info: {
+    displayName: 'Sub Navigation Link';
+    icon: 'bulletList';
+  };
+  attributes: {
     Title: Schema.Attribute.String;
+    Url: Schema.Attribute.String;
   };
 }
 
@@ -134,6 +151,7 @@ declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
       'navigation-components.navigation-link': NavigationComponentsNavigationLink;
+      'navigation-components.sub-navigation-link': NavigationComponentsSubNavigationLink;
       'shared.button': SharedButton;
       'shared.hero-banner': SharedHeroBanner;
       'shared.image-with-text-section': SharedImageWithTextSection;
