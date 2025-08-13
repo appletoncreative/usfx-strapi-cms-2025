@@ -1,0 +1,21 @@
+{
+  "kind": "singleType",
+  "collectionName": "center_newss",
+  "info": {
+    "singularName": "center-news",
+    "pluralName": "center-newss",
+    "displayName": "Center News"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Content": {
+      "type": "blocks"
+    }
+  }
+}

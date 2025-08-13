@@ -373,6 +373,35 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiCenterNewsCenterNews extends Struct.SingleTypeSchema {
+  collectionName: 'center_newss';
+  info: {
+    displayName: 'Center News';
+    pluralName: 'center-newss';
+    singularName: 'center-news';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Content: Schema.Attribute.Blocks;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::center-news.center-news'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    Title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
   collectionName: 'globals';
   info: {
@@ -437,6 +466,45 @@ export interface ApiMainNavigationMainNavigation
   };
 }
 
+export interface ApiNewsPostNewsPost extends Struct.CollectionTypeSchema {
+  collectionName: 'news_posts';
+  info: {
+    displayName: 'News Post';
+    pluralName: 'news-posts';
+    singularName: 'news-post';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    BannerImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    Content: Schema.Attribute.Blocks;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::news-post.news-post'
+    > &
+      Schema.Attribute.Private;
+    post_categories: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::post-category.post-category'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    PublishedDate: Schema.Attribute.Date & Schema.Attribute.Required;
+    SeoDescription: Schema.Attribute.String;
+    Slug: Schema.Attribute.UID<'Title'> & Schema.Attribute.Required;
+    Title: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiOurTeamOurTeam extends Struct.SingleTypeSchema {
   collectionName: 'our_teams';
   info: {
@@ -495,6 +563,39 @@ export interface ApiPagePage extends Struct.CollectionTypeSchema {
     Title: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.Unique;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiPostCategoryPostCategory
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'post_categories';
+  info: {
+    displayName: 'Post Category';
+    pluralName: 'post-categories';
+    singularName: 'post-category';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    CategoryName: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::post-category.post-category'
+    > &
+      Schema.Attribute.Private;
+    news_posts: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::news-post.news-post'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1010,10 +1111,13 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::center-news.center-news': ApiCenterNewsCenterNews;
       'api::global.global': ApiGlobalGlobal;
       'api::main-navigation.main-navigation': ApiMainNavigationMainNavigation;
+      'api::news-post.news-post': ApiNewsPostNewsPost;
       'api::our-team.our-team': ApiOurTeamOurTeam;
       'api::page.page': ApiPagePage;
+      'api::post-category.post-category': ApiPostCategoryPostCategory;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;
