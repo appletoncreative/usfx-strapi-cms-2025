@@ -1,0 +1,41 @@
+{
+  "kind": "singleType",
+  "collectionName": "our_teams",
+  "info": {
+    "singularName": "our-team",
+    "pluralName": "our-teams",
+    "displayName": "Our Team"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Content": {
+      "type": "blocks"
+    },
+    "Leadership": {
+      "type": "component",
+      "component": "shared.team-member",
+      "repeatable": true
+    },
+    "Research": {
+      "type": "component",
+      "component": "shared.team-member",
+      "repeatable": true
+    },
+    "Education": {
+      "type": "component",
+      "component": "shared.team-member",
+      "repeatable": true
+    },
+    "Operations": {
+      "type": "component",
+      "component": "shared.team-member",
+      "repeatable": true
+    }
+  }
+}

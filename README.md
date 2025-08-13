@@ -61,3 +61,6 @@ Feel free to check out the [Strapi GitHub repository](https://github.com/strapi/
 <sub>🤫 Psst! [Strapi is hiring](https://strapi.io/careers).</sub>
 
 npm run strapi transfer -- -- --to <destinationURL> --to-token <transferToken> --force
+
+//deploy to strapi account
+npm run strapi transfer -- -- --to https://necessary-friend-a78a94d9ff.strapiapp.com/admin/ --to-token 5d31e6609fd5d51b38cc859662a2990d53caa764a1141691c60c5cbf0257e67f2d78678cd1684fd1299bb2c228c5dfd39a71fe45d2e403dc312d4a1993fdef694fcdd8012bd652d9ae07b0278ba11c8f9d912898a2d0a6780a006dfa07db2889478b0ea88d84a35189301d200e3172f84a1fa179aa838c5b5bffdae6e7c01f24 --force

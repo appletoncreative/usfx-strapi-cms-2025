@@ -147,6 +147,23 @@ export interface SharedStatCalloutSection extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedTeamMember extends Struct.ComponentSchema {
+  collectionName: 'components_shared_team_members';
+  info: {
+    displayName: 'Team Member';
+    icon: 'user';
+  };
+  attributes: {
+    Content: Schema.Attribute.Blocks;
+    Email: Schema.Attribute.Email;
+    Name: Schema.Attribute.String;
+    ProfileImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    Title: Schema.Attribute.String;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
@@ -161,6 +178,7 @@ declare module '@strapi/strapi' {
       'shared.seo': SharedSeo;
       'shared.slider': SharedSlider;
       'shared.stat-callout-section': SharedStatCalloutSection;
+      'shared.team-member': SharedTeamMember;
     }
   }
 }
