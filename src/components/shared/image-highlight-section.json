@@ -38,11 +38,13 @@
       "enum": [
         "storm-light",
         "teal-light",
-        "lemongrass-light"
+        "lemongrass-light",
+        "apple"
       ]
     },
     "ReverseColumns": {
-      "type": "boolean"
+      "type": "boolean",
+      "default": false
     }
   },
   "config": {}

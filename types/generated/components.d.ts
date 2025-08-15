@@ -67,11 +67,12 @@ export interface SharedImageHighlightSection extends Struct.ComponentSchema {
     Image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &
       Schema.Attribute.Required;
     ImageBorderColor: Schema.Attribute.Enumeration<
-      ['storm-light', 'teal-light', 'lemongrass-light']
+      ['storm-light', 'teal-light', 'lemongrass-light', 'apple']
     > &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<'storm-light'>;
-    ReverseColumns: Schema.Attribute.Boolean;
+    ReverseColumns: Schema.Attribute.Boolean &
+      Schema.Attribute.DefaultTo<false>;
     SubHeader: Schema.Attribute.String;
   };
 }
