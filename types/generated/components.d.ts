@@ -54,25 +54,25 @@ export interface SharedHeroBanner extends Struct.ComponentSchema {
   };
 }
 
-export interface SharedImageWithTextSection extends Struct.ComponentSchema {
-  collectionName: 'components_shared_image_with_text_sections';
+export interface SharedImageHighlightSection extends Struct.ComponentSchema {
+  collectionName: 'components_shared_image_highlight_sections';
   info: {
-    displayName: 'Image with Text Section';
-    icon: 'apps';
+    displayName: 'Image Highlight Section';
+    icon: 'layout';
   };
   attributes: {
-    AlignImageLeft: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
-    Button: Schema.Attribute.Component<'shared.button', true>;
-    Heading: Schema.Attribute.String;
-    Image: Schema.Attribute.Media<'images' | 'files'> &
+    Button: Schema.Attribute.Component<'shared.button', false>;
+    Content: Schema.Attribute.Blocks;
+    Header: Schema.Attribute.String;
+    Image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &
       Schema.Attribute.Required;
     ImageBorderColor: Schema.Attribute.Enumeration<
-      ['storm-light', 'lemongrass-light', 'teal-light']
+      ['storm-light', 'teal-light', 'lemongrass-light']
     > &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<'storm-light'>;
-    SubHeading: Schema.Attribute.String;
-    Text: Schema.Attribute.Blocks;
+    ReverseColumns: Schema.Attribute.Boolean;
+    SubHeader: Schema.Attribute.String;
   };
 }
 
@@ -171,7 +171,7 @@ declare module '@strapi/strapi' {
       'navigation-components.sub-navigation-link': NavigationComponentsSubNavigationLink;
       'shared.button': SharedButton;
       'shared.hero-banner': SharedHeroBanner;
-      'shared.image-with-text-section': SharedImageWithTextSection;
+      'shared.image-highlight-section': SharedImageHighlightSection;
       'shared.media': SharedMedia;
       'shared.quote': SharedQuote;
       'shared.rich-text': SharedRichText;

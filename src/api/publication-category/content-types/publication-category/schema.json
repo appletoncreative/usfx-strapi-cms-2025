@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "post_categories",
+  "collectionName": "publication_categories",
   "info": {
-    "singularName": "post-category",
-    "pluralName": "post-categories",
-    "displayName": "News Post Category"
+    "singularName": "publication-category",
+    "pluralName": "publication-categories",
+    "displayName": "Publication Category"
   },
   "options": {
     "draftAndPublish": true
@@ -16,11 +16,11 @@
       "required": true,
       "unique": true
     },
-    "news_posts": {
+    "publications": {
       "type": "relation",
       "relation": "manyToMany",
-      "target": "api::news-post.news-post",
-      "mappedBy": "post_categories"
+      "target": "api::publication.publication",
+      "inversedBy": "publication_categories"
     }
   }
 }

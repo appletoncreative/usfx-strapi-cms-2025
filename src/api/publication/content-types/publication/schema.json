@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "news_posts",
+  "collectionName": "publications",
   "info": {
-    "singularName": "news-post",
-    "pluralName": "news-posts",
-    "displayName": "News Post"
+    "singularName": "publication",
+    "pluralName": "publications",
+    "displayName": "Publication"
   },
   "options": {
     "draftAndPublish": true
@@ -21,11 +21,7 @@
       "required": true
     },
     "PublishedDate": {
-      "type": "date",
-      "required": true
-    },
-    "SeoDescription": {
-      "type": "string"
+      "type": "date"
     },
     "Excerpt": {
       "type": "string"
@@ -40,14 +36,21 @@
         "audios"
       ]
     },
-    "Content": {
-      "type": "blocks"
+    "DownloadButton": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
     },
-    "post_categories": {
+    "publication_categories": {
       "type": "relation",
       "relation": "manyToMany",
-      "target": "api::post-category.post-category",
-      "inversedBy": "news_posts"
+      "target": "api::publication-category.publication-category",
+      "mappedBy": "publications"
     }
   }
 }

@@ -484,6 +484,7 @@ export interface ApiNewsPostNewsPost extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    Excerpt: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -508,7 +509,7 @@ export interface ApiNewsPostNewsPost extends Struct.CollectionTypeSchema {
 export interface ApiOurTeamOurTeam extends Struct.SingleTypeSchema {
   collectionName: 'our_teams';
   info: {
-    displayName: 'Our Team';
+    displayName: 'Our Team Page';
     pluralName: 'our-teams';
     singularName: 'our-team';
   };
@@ -554,6 +555,9 @@ export interface ApiPagePage extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    ImageWithTextSections: Schema.Attribute.DynamicZone<
+      ['shared.image-highlight-section']
+    >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::page.page'> &
       Schema.Attribute.Private;
@@ -573,7 +577,7 @@ export interface ApiPostCategoryPostCategory
   extends Struct.CollectionTypeSchema {
   collectionName: 'post_categories';
   info: {
-    displayName: 'Post Category';
+    displayName: 'News Post Category';
     pluralName: 'post-categories';
     singularName: 'post-category';
   };
@@ -581,7 +585,9 @@ export interface ApiPostCategoryPostCategory
     draftAndPublish: true;
   };
   attributes: {
-    CategoryName: Schema.Attribute.String;
+    CategoryName: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -596,6 +602,112 @@ export interface ApiPostCategoryPostCategory
       'api::news-post.news-post'
     >;
     publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiPublicationCategoryPublicationCategory
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'publication_categories';
+  info: {
+    displayName: 'Publication Category';
+    pluralName: 'publication-categories';
+    singularName: 'publication-category';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    CategoryName: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::publication-category.publication-category'
+    > &
+      Schema.Attribute.Private;
+    publications: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::publication.publication'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiPublicationPublication extends Struct.CollectionTypeSchema {
+  collectionName: 'publications';
+  info: {
+    displayName: 'Publication';
+    pluralName: 'publications';
+    singularName: 'publication';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    BannerImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    DownloadButton: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    Excerpt: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::publication.publication'
+    > &
+      Schema.Attribute.Private;
+    publication_categories: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::publication-category.publication-category'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    PublishedDate: Schema.Attribute.Date;
+    Slug: Schema.Attribute.UID<'Title'> & Schema.Attribute.Required;
+    Title: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiResearchPublicationsResearchPublications
+  extends Struct.SingleTypeSchema {
+  collectionName: 'research_publicationss';
+  info: {
+    displayName: 'Research Publications';
+    pluralName: 'research-publicationss';
+    singularName: 'research-publications';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Content: Schema.Attribute.Blocks;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::research-publications.research-publications'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    Title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1118,6 +1230,9 @@ declare module '@strapi/strapi' {
       'api::our-team.our-team': ApiOurTeamOurTeam;
       'api::page.page': ApiPagePage;
       'api::post-category.post-category': ApiPostCategoryPostCategory;
+      'api::publication-category.publication-category': ApiPublicationCategoryPublicationCategory;
+      'api::publication.publication': ApiPublicationPublication;
+      'api::research-publications.research-publications': ApiResearchPublicationsResearchPublications;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

@@ -1,0 +1,21 @@
+{
+  "kind": "singleType",
+  "collectionName": "research_publicationss",
+  "info": {
+    "singularName": "research-publications",
+    "pluralName": "research-publicationss",
+    "displayName": "Research Publications"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Content": {
+      "type": "blocks"
+    }
+  }
+}

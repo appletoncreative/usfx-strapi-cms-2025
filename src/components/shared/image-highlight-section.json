@@ -1,0 +1,49 @@
+{
+  "collectionName": "components_shared_image_highlight_sections",
+  "info": {
+    "displayName": "Image Highlight Section",
+    "icon": "layout"
+  },
+  "options": {},
+  "attributes": {
+    "SubHeader": {
+      "type": "string"
+    },
+    "Header": {
+      "type": "string"
+    },
+    "Content": {
+      "type": "blocks"
+    },
+    "Button": {
+      "type": "component",
+      "component": "shared.button",
+      "repeatable": false
+    },
+    "Image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "ImageBorderColor": {
+      "type": "enumeration",
+      "required": true,
+      "default": "storm-light",
+      "enum": [
+        "storm-light",
+        "teal-light",
+        "lemongrass-light"
+      ]
+    },
+    "ReverseColumns": {
+      "type": "boolean"
+    }
+  },
+  "config": {}
+}
