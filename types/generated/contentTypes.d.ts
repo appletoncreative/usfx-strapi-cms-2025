@@ -484,7 +484,7 @@ export interface ApiNewsPostNewsPost extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    Excerpt: Schema.Attribute.String;
+    Excerpt: Schema.Attribute.Text;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -497,7 +497,7 @@ export interface ApiNewsPostNewsPost extends Struct.CollectionTypeSchema {
     >;
     publishedAt: Schema.Attribute.DateTime;
     PublishedDate: Schema.Attribute.Date & Schema.Attribute.Required;
-    SeoDescription: Schema.Attribute.String;
+    SeoDescription: Schema.Attribute.Text;
     Slug: Schema.Attribute.UID<'Title'> & Schema.Attribute.Required;
     Title: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
@@ -667,7 +667,7 @@ export interface ApiPublicationPublication extends Struct.CollectionTypeSchema {
     DownloadButton: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios'
     >;
-    Excerpt: Schema.Attribute.String;
+    Excerpt: Schema.Attribute.Text;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',

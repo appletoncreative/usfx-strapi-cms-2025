@@ -24,7 +24,7 @@
       "type": "date"
     },
     "Excerpt": {
-      "type": "string"
+      "type": "text"
     },
     "BannerImage": {
       "type": "media",

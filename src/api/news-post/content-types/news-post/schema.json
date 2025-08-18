@@ -25,10 +25,10 @@
       "required": true
     },
     "SeoDescription": {
-      "type": "string"
+      "type": "text"
     },
     "Excerpt": {
-      "type": "string"
+      "type": "text"
     },
     "BannerImage": {
       "type": "media",
