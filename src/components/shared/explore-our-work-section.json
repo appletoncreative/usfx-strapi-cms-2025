@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_shared_explore_our_work_sections",
+  "info": {
+    "displayName": "Explore Our Work Section",
+    "icon": "briefcase"
+  },
+  "options": {},
+  "attributes": {
+    "Header": {
+      "type": "string"
+    },
+    "Button": {
+      "type": "component",
+      "component": "shared.button",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

@@ -41,6 +41,18 @@ export interface SharedButton extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedExploreOurWorkSection extends Struct.ComponentSchema {
+  collectionName: 'components_shared_explore_our_work_sections';
+  info: {
+    displayName: 'Explore Our Work Section';
+    icon: 'briefcase';
+  };
+  attributes: {
+    Button: Schema.Attribute.Component<'shared.button', true>;
+    Header: Schema.Attribute.String;
+  };
+}
+
 export interface SharedHeroBanner extends Struct.ComponentSchema {
   collectionName: 'components_shared_hero_banners';
   info: {
@@ -171,6 +183,7 @@ declare module '@strapi/strapi' {
       'navigation-components.navigation-link': NavigationComponentsNavigationLink;
       'navigation-components.sub-navigation-link': NavigationComponentsSubNavigationLink;
       'shared.button': SharedButton;
+      'shared.explore-our-work-section': SharedExploreOurWorkSection;
       'shared.hero-banner': SharedHeroBanner;
       'shared.image-highlight-section': SharedImageHighlightSection;
       'shared.media': SharedMedia;

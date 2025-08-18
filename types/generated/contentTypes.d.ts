@@ -555,6 +555,10 @@ export interface ApiPagePage extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    ExploreOurWorkSection: Schema.Attribute.Component<
+      'shared.explore-our-work-section',
+      false
+    >;
     ImageWithTextSections: Schema.Attribute.DynamicZone<
       ['shared.image-highlight-section']
     >;
