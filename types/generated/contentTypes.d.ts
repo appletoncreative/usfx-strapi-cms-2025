@@ -402,6 +402,38 @@ export interface ApiCenterNewsCenterNews extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiDashboardDashboard extends Struct.SingleTypeSchema {
+  collectionName: 'dashboards';
+  info: {
+    displayName: 'Data Dashboard Page';
+    pluralName: 'dashboards';
+    singularName: 'dashboard';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    BannerImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    Content: Schema.Attribute.Blocks;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::dashboard.dashboard'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    Title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
   collectionName: 'globals';
   info: {
@@ -1228,6 +1260,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::center-news.center-news': ApiCenterNewsCenterNews;
+      'api::dashboard.dashboard': ApiDashboardDashboard;
       'api::global.global': ApiGlobalGlobal;
       'api::main-navigation.main-navigation': ApiMainNavigationMainNavigation;
       'api::news-post.news-post': ApiNewsPostNewsPost;
