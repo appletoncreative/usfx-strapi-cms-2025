@@ -376,7 +376,7 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
 export interface ApiCenterNewsCenterNews extends Struct.SingleTypeSchema {
   collectionName: 'center_newss';
   info: {
-    displayName: 'Center News';
+    displayName: 'Center News Page';
     pluralName: 'center-newss';
     singularName: 'center-news';
   };
@@ -384,6 +384,9 @@ export interface ApiCenterNewsCenterNews extends Struct.SingleTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    BannerImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
     Content: Schema.Attribute.Blocks;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -549,6 +552,9 @@ export interface ApiOurTeamOurTeam extends Struct.SingleTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    BannerImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
     Content: Schema.Attribute.Blocks;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -724,7 +730,7 @@ export interface ApiResearchPublicationsResearchPublications
   extends Struct.SingleTypeSchema {
   collectionName: 'research_publicationss';
   info: {
-    displayName: 'Research Publications';
+    displayName: 'Research Publications Page';
     pluralName: 'research-publicationss';
     singularName: 'research-publications';
   };
@@ -732,6 +738,9 @@ export interface ApiResearchPublicationsResearchPublications
     draftAndPublish: true;
   };
   attributes: {
+    BannerImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
     Content: Schema.Attribute.Blocks;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &

@@ -4,7 +4,7 @@
   "info": {
     "singularName": "center-news",
     "pluralName": "center-newss",
-    "displayName": "Center News"
+    "displayName": "Center News Page"
   },
   "options": {
     "draftAndPublish": true
@@ -13,6 +13,16 @@
   "attributes": {
     "Title": {
       "type": "string"
+    },
+    "BannerImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
     },
     "Content": {
       "type": "blocks"

@@ -4,7 +4,7 @@
   "info": {
     "singularName": "research-publications",
     "pluralName": "research-publicationss",
-    "displayName": "Research Publications"
+    "displayName": "Research Publications Page"
   },
   "options": {
     "draftAndPublish": true
@@ -13,6 +13,16 @@
   "attributes": {
     "Title": {
       "type": "string"
+    },
+    "BannerImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
     },
     "Content": {
       "type": "blocks"

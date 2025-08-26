@@ -14,6 +14,16 @@
     "Title": {
       "type": "string"
     },
+    "BannerImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
     "Content": {
       "type": "blocks"
     },
