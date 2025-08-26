@@ -1,5 +1,25 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface ContentContentSection extends Struct.ComponentSchema {
+  collectionName: 'components_content_content_sections';
+  info: {
+    displayName: 'Content Section';
+  };
+  attributes: {
+    Content: Schema.Attribute.Blocks;
+  };
+}
+
+export interface ImageImageSection extends Struct.ComponentSchema {
+  collectionName: 'components_image_image_sections';
+  info: {
+    displayName: 'Image Section';
+  };
+  attributes: {
+    Image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+  };
+}
+
 export interface NavigationComponentsNavigationLink
   extends Struct.ComponentSchema {
   collectionName: 'components_navigation_components_navigation_links';
@@ -180,6 +200,8 @@ export interface SharedTeamMember extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'content.content-section': ContentContentSection;
+      'image.image-section': ImageImageSection;
       'navigation-components.navigation-link': NavigationComponentsNavigationLink;
       'navigation-components.sub-navigation-link': NavigationComponentsSubNavigationLink;
       'shared.button': SharedButton;

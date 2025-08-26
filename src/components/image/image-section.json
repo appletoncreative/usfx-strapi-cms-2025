@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_image_image_sections",
+  "info": {
+    "displayName": "Image Section"
+  },
+  "options": {},
+  "attributes": {
+    "Image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  },
+  "config": {}
+}

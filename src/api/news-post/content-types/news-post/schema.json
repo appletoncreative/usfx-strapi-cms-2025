@@ -48,6 +48,13 @@
       "relation": "manyToMany",
       "target": "api::post-category.post-category",
       "inversedBy": "news_posts"
+    },
+    "Sections": {
+      "type": "dynamiczone",
+      "components": [
+        "content.content-section",
+        "image.image-section"
+      ]
     }
   }
 }

@@ -532,6 +532,9 @@ export interface ApiNewsPostNewsPost extends Struct.CollectionTypeSchema {
     >;
     publishedAt: Schema.Attribute.DateTime;
     PublishedDate: Schema.Attribute.Date & Schema.Attribute.Required;
+    Sections: Schema.Attribute.DynamicZone<
+      ['content.content-section', 'image.image-section']
+    >;
     SeoDescription: Schema.Attribute.Text;
     Slug: Schema.Attribute.UID<'Title'> & Schema.Attribute.Required;
     Title: Schema.Attribute.String & Schema.Attribute.Required;
