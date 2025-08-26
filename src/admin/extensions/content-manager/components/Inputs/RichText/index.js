@@ -2,6 +2,7 @@ import { EditorContent, useEditor } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
 import Bold from "@tiptap/extension-bold";
 import CodeBlock from "@tiptap/extension-code-block";
+import Image from "@tiptap/extension-image";
 
 const CustomRichText = ({ onChange, value }) => {
   const editor = useEditor({
@@ -9,6 +10,7 @@ const CustomRichText = ({ onChange, value }) => {
       StarterKit,
       Bold,
       CodeBlock,
+      Image,
       // Add/remove what you want here
     ],
     content: value,
