@@ -4,7 +4,7 @@
   "info": {
     "singularName": "research-publications",
     "pluralName": "research-publicationss",
-    "displayName": "Research Publications Page"
+    "displayName": "Library Page"
   },
   "options": {
     "draftAndPublish": true

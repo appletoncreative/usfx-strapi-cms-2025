@@ -449,11 +449,12 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
     draftAndPublish: false;
   };
   attributes: {
+    CountyMapDataCSV: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    defaultSeo: Schema.Attribute.Component<'shared.seo', false>;
-    favicon: Schema.Attribute.Media<'images' | 'files' | 'videos'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -466,6 +467,9 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    WorkforceTrendsDataCSV: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
   };
 }
 
@@ -657,7 +661,7 @@ export interface ApiPublicationCategoryPublicationCategory
   extends Struct.CollectionTypeSchema {
   collectionName: 'publication_categories';
   info: {
-    displayName: 'Publication Category';
+    displayName: 'Library Post Category';
     pluralName: 'publication-categories';
     singularName: 'publication-category';
   };
@@ -691,7 +695,7 @@ export interface ApiPublicationCategoryPublicationCategory
 export interface ApiPublicationPublication extends Struct.CollectionTypeSchema {
   collectionName: 'publications';
   info: {
-    displayName: 'Publication';
+    displayName: 'Library Post';
     pluralName: 'publications';
     singularName: 'publication';
   };
@@ -733,7 +737,7 @@ export interface ApiResearchPublicationsResearchPublications
   extends Struct.SingleTypeSchema {
   collectionName: 'research_publicationss';
   info: {
-    displayName: 'Research Publications Page';
+    displayName: 'Library Page';
     pluralName: 'research-publicationss';
     singularName: 'research-publications';
   };
