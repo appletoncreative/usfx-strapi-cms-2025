@@ -21,6 +21,12 @@
         "audios"
       ]
     },
+    "SeoTitle": {
+      "type": "string"
+    },
+    "SeoDescription": {
+      "type": "text"
+    },
     "Content1": {
       "type": "blocks"
     },
@@ -38,6 +44,11 @@
     },
     "Source3": {
       "type": "text"
+    },
+    "Slider": {
+      "type": "component",
+      "component": "shared.home-page-slide",
+      "repeatable": true
     }
   }
 }

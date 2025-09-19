@@ -86,6 +86,18 @@ export interface SharedHeroBanner extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedHomePageSlide extends Struct.ComponentSchema {
+  collectionName: 'components_shared_home_page_slides';
+  info: {
+    displayName: 'HomePageSlide';
+    icon: 'grid';
+  };
+  attributes: {
+    BottomText: Schema.Attribute.Text;
+    TopText: Schema.Attribute.Text;
+  };
+}
+
 export interface SharedImageHighlightSection extends Struct.ComponentSchema {
   collectionName: 'components_shared_image_highlight_sections';
   info: {
@@ -203,6 +215,7 @@ declare module '@strapi/strapi' {
       'shared.button': SharedButton;
       'shared.explore-our-work-section': SharedExploreOurWorkSection;
       'shared.hero-banner': SharedHeroBanner;
+      'shared.home-page-slide': SharedHomePageSlide;
       'shared.image-highlight-section': SharedImageHighlightSection;
       'shared.media': SharedMedia;
       'shared.quote': SharedQuote;

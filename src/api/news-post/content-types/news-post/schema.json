@@ -30,6 +30,16 @@
     "Excerpt": {
       "type": "text"
     },
+    "ThumbnailImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
     "BannerImage": {
       "type": "media",
       "multiple": false,

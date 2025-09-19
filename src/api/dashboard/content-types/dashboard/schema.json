@@ -26,6 +26,12 @@
         "videos",
         "audios"
       ]
+    },
+    "SeoTitle": {
+      "type": "string"
+    },
+    "SeoDescription": {
+      "type": "text"
     }
   }
 }

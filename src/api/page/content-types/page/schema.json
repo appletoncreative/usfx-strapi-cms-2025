@@ -45,6 +45,9 @@
       "type": "component",
       "component": "shared.explore-our-work-section",
       "repeatable": false
+    },
+    "SeoTitle": {
+      "type": "string"
     }
   }
 }

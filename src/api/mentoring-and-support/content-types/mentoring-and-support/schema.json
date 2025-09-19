@@ -1,10 +1,10 @@
 {
   "kind": "singleType",
-  "collectionName": "research_publicationss",
+  "collectionName": "mentoring_and_supports",
   "info": {
-    "singularName": "research-publications",
-    "pluralName": "research-publicationss",
-    "displayName": "Library Page"
+    "singularName": "mentoring-and-support",
+    "pluralName": "mentoring-and-supports",
+    "displayName": "Mentoring & Support"
   },
   "options": {
     "draftAndPublish": true
@@ -12,7 +12,8 @@
   "pluginOptions": {},
   "attributes": {
     "Title": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "SeoTitle": {
       "type": "string"

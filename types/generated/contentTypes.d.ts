@@ -398,6 +398,8 @@ export interface ApiCenterNewsCenterNews extends Struct.SingleTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    SeoDescription: Schema.Attribute.Text;
+    SeoTitle: Schema.Attribute.String;
     Title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -430,6 +432,8 @@ export interface ApiDashboardDashboard extends Struct.SingleTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    SeoDescription: Schema.Attribute.Text;
+    SeoTitle: Schema.Attribute.String;
     Title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -500,6 +504,9 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    SeoDescription: Schema.Attribute.Text;
+    SeoTitle: Schema.Attribute.String;
+    Slider: Schema.Attribute.Component<'shared.home-page-slide', true>;
     Source1: Schema.Attribute.Text;
     Source2: Schema.Attribute.Text;
     Source3: Schema.Attribute.Text;
@@ -535,6 +542,41 @@ export interface ApiMainNavigationMainNavigation
       'navigation-components.navigation-link',
       true
     >;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiMentoringAndSupportMentoringAndSupport
+  extends Struct.SingleTypeSchema {
+  collectionName: 'mentoring_and_supports';
+  info: {
+    displayName: 'Mentoring & Support';
+    pluralName: 'mentoring-and-supports';
+    singularName: 'mentoring-and-support';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    BannerImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    Content: Schema.Attribute.Blocks;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::mentoring-and-support.mentoring-and-support'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    SeoDescription: Schema.Attribute.Text;
+    SeoTitle: Schema.Attribute.String;
+    Title: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -577,6 +619,9 @@ export interface ApiNewsPostNewsPost extends Struct.CollectionTypeSchema {
     >;
     SeoDescription: Schema.Attribute.Text;
     Slug: Schema.Attribute.UID<'Title'> & Schema.Attribute.Required;
+    ThumbnailImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
     Title: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -613,6 +658,8 @@ export interface ApiOurTeamOurTeam extends Struct.SingleTypeSchema {
     Operations: Schema.Attribute.Component<'shared.team-member', true>;
     publishedAt: Schema.Attribute.DateTime;
     Research: Schema.Attribute.Component<'shared.team-member', true>;
+    SeoDescription: Schema.Attribute.Text;
+    SeoTitle: Schema.Attribute.String;
     Title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -648,6 +695,7 @@ export interface ApiPagePage extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     SeoDescription: Schema.Attribute.Text;
+    SeoTitle: Schema.Attribute.String;
     Slug: Schema.Attribute.UID<'Title'> & Schema.Attribute.Required;
     Title: Schema.Attribute.String &
       Schema.Attribute.Required &
@@ -795,6 +843,8 @@ export interface ApiResearchPublicationsResearchPublications
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    SeoDescription: Schema.Attribute.Text;
+    SeoTitle: Schema.Attribute.String;
     Title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -1316,6 +1366,7 @@ declare module '@strapi/strapi' {
       'api::global.global': ApiGlobalGlobal;
       'api::home-page.home-page': ApiHomePageHomePage;
       'api::main-navigation.main-navigation': ApiMainNavigationMainNavigation;
+      'api::mentoring-and-support.mentoring-and-support': ApiMentoringAndSupportMentoringAndSupport;
       'api::news-post.news-post': ApiNewsPostNewsPost;
       'api::our-team.our-team': ApiOurTeamOurTeam;
       'api::page.page': ApiPagePage;

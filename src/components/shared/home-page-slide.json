@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_shared_home_page_slides",
+  "info": {
+    "displayName": "HomePageSlide",
+    "icon": "grid"
+  },
+  "options": {},
+  "attributes": {
+    "TopText": {
+      "type": "text"
+    },
+    "BottomText": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}
