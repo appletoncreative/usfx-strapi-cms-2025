@@ -473,6 +473,42 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
+  collectionName: 'home_pages';
+  info: {
+    displayName: 'Home Page';
+    pluralName: 'home-pages';
+    singularName: 'home-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Content1: Schema.Attribute.Blocks;
+    Content2: Schema.Attribute.Blocks;
+    Content3: Schema.Attribute.Blocks;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    LegislativeReportFile: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::home-page.home-page'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    Source1: Schema.Attribute.Text;
+    Source2: Schema.Attribute.Text;
+    Source3: Schema.Attribute.Text;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiMainNavigationMainNavigation
   extends Struct.SingleTypeSchema {
   collectionName: 'main_navigations';
@@ -1278,6 +1314,7 @@ declare module '@strapi/strapi' {
       'api::center-news.center-news': ApiCenterNewsCenterNews;
       'api::dashboard.dashboard': ApiDashboardDashboard;
       'api::global.global': ApiGlobalGlobal;
+      'api::home-page.home-page': ApiHomePageHomePage;
       'api::main-navigation.main-navigation': ApiMainNavigationMainNavigation;
       'api::news-post.news-post': ApiNewsPostNewsPost;
       'api::our-team.our-team': ApiOurTeamOurTeam;

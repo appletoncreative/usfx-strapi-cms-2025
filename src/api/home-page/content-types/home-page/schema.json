@@ -1,0 +1,43 @@
+{
+  "kind": "singleType",
+  "collectionName": "home_pages",
+  "info": {
+    "singularName": "home-page",
+    "pluralName": "home-pages",
+    "displayName": "Home Page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "LegislativeReportFile": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "Content1": {
+      "type": "blocks"
+    },
+    "Source1": {
+      "type": "text"
+    },
+    "Content2": {
+      "type": "blocks"
+    },
+    "Source2": {
+      "type": "text"
+    },
+    "Content3": {
+      "type": "blocks"
+    },
+    "Source3": {
+      "type": "text"
+    }
+  }
+}
