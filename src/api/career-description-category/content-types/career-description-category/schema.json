@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "career_description_categories",
+  "info": {
+    "singularName": "career-description-category",
+    "pluralName": "career-description-categories",
+    "displayName": "Career Description Category"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "career_description_page": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::career-description-page.career-description-page",
+      "inversedBy": "career_description_category"
+    }
+  }
+}

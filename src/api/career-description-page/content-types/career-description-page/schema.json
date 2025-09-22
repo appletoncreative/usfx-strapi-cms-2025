@@ -1,0 +1,63 @@
+{
+  "kind": "collectionType",
+  "collectionName": "career_description_pages",
+  "info": {
+    "singularName": "career-description-page",
+    "pluralName": "career-description-pages",
+    "displayName": "Career Description Page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "ContentMain": {
+      "type": "blocks"
+    },
+    "Icon1": {
+      "type": "enumeration",
+      "enum": [
+        "Lightbulb",
+        "Arrow",
+        "Info"
+      ]
+    },
+    "Content1": {
+      "type": "blocks"
+    },
+    "Icon2": {
+      "type": "enumeration",
+      "enum": [
+        "Lightbulb",
+        "Arrow",
+        "Info"
+      ]
+    },
+    "Content2": {
+      "type": "blocks"
+    },
+    "Icon3": {
+      "type": "enumeration",
+      "enum": [
+        "Lightbulb",
+        "Arrow",
+        "Info"
+      ]
+    },
+    "Content3": {
+      "type": "blocks"
+    },
+    "YoutubeEmbedUrl": {
+      "type": "text"
+    },
+    "career_description_category": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::career-description-category.career-description-category",
+      "mappedBy": "career_description_page"
+    }
+  }
+}

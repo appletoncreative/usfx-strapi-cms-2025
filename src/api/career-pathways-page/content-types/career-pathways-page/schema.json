@@ -1,0 +1,39 @@
+{
+  "kind": "singleType",
+  "collectionName": "career_pathways_pages",
+  "info": {
+    "singularName": "career-pathways-page",
+    "pluralName": "career-pathways-pages",
+    "displayName": "Career Pathways Page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "required": true
+    },
+    "SeoTitle": {
+      "type": "string"
+    },
+    "SeoDescription": {
+      "type": "text"
+    },
+    "BannerImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images", "files", "videos", "audios"]
+    },
+    "Content": {
+      "type": "blocks"
+    },
+    "Content2": {
+      "type": "blocks"
+    },
+    "MapIframeUrl": {
+      "type": "string"
+    }
+  }
+}

@@ -373,6 +373,117 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiCareerDescriptionCategoryCareerDescriptionCategory
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'career_description_categories';
+  info: {
+    displayName: 'Career Description Category';
+    pluralName: 'career-description-categories';
+    singularName: 'career-description-category';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    career_description_page: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::career-description-page.career-description-page'
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::career-description-category.career-description-category'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    Title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiCareerDescriptionPageCareerDescriptionPage
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'career_description_pages';
+  info: {
+    displayName: 'Career Description Page';
+    pluralName: 'career-description-pages';
+    singularName: 'career-description-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    career_description_category: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::career-description-category.career-description-category'
+    >;
+    Content1: Schema.Attribute.Blocks;
+    Content2: Schema.Attribute.Blocks;
+    Content3: Schema.Attribute.Blocks;
+    ContentMain: Schema.Attribute.Blocks;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    Icon1: Schema.Attribute.Enumeration<['Lightbulb', 'Arrow', 'Info']>;
+    Icon2: Schema.Attribute.Enumeration<['Lightbulb', 'Arrow', 'Info']>;
+    Icon3: Schema.Attribute.Enumeration<['Lightbulb', 'Arrow', 'Info']>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::career-description-page.career-description-page'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    Title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    YoutubeEmbedUrl: Schema.Attribute.Text;
+  };
+}
+
+export interface ApiCareerPathwaysPageCareerPathwaysPage
+  extends Struct.SingleTypeSchema {
+  collectionName: 'career_pathways_pages';
+  info: {
+    displayName: 'Career Pathways Page';
+    pluralName: 'career-pathways-pages';
+    singularName: 'career-pathways-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    BannerImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    Content: Schema.Attribute.Blocks;
+    Content2: Schema.Attribute.Blocks;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::career-pathways-page.career-pathways-page'
+    > &
+      Schema.Attribute.Private;
+    MapIframeUrl: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    SeoDescription: Schema.Attribute.Text;
+    SeoTitle: Schema.Attribute.String;
+    Title: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiCenterNewsCenterNews extends Struct.SingleTypeSchema {
   collectionName: 'center_newss';
   info: {
@@ -1361,6 +1472,9 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::career-description-category.career-description-category': ApiCareerDescriptionCategoryCareerDescriptionCategory;
+      'api::career-description-page.career-description-page': ApiCareerDescriptionPageCareerDescriptionPage;
+      'api::career-pathways-page.career-pathways-page': ApiCareerPathwaysPageCareerPathwaysPage;
       'api::center-news.center-news': ApiCenterNewsCenterNews;
       'api::dashboard.dashboard': ApiDashboardDashboard;
       'api::global.global': ApiGlobalGlobal;
