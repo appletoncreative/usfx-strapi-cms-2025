@@ -431,9 +431,12 @@ export interface ApiCareerDescriptionPageCareerDescriptionPage
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    Icon1: Schema.Attribute.Enumeration<['Lightbulb', 'Arrow', 'Info']>;
-    Icon2: Schema.Attribute.Enumeration<['Lightbulb', 'Arrow', 'Info']>;
-    Icon3: Schema.Attribute.Enumeration<['Lightbulb', 'Arrow', 'Info']>;
+    Icon1: Schema.Attribute.Enumeration<['Lightbulb', 'Arrow', 'Info']> &
+      Schema.Attribute.DefaultTo<'Lightbulb'>;
+    Icon2: Schema.Attribute.Enumeration<['Lightbulb', 'Arrow', 'Info']> &
+      Schema.Attribute.DefaultTo<'Arrow'>;
+    Icon3: Schema.Attribute.Enumeration<['Lightbulb', 'Arrow', 'Info']> &
+      Schema.Attribute.DefaultTo<'Info'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -442,7 +445,7 @@ export interface ApiCareerDescriptionPageCareerDescriptionPage
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     Slug: Schema.Attribute.UID<'Title'> & Schema.Attribute.Required;
-    Title: Schema.Attribute.String;
+    Title: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

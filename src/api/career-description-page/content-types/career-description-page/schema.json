@@ -12,7 +12,8 @@
   "pluginOptions": {},
   "attributes": {
     "Title": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "Slug": {
       "type": "uid",
@@ -27,6 +28,7 @@
     },
     "Icon1": {
       "type": "enumeration",
+      "default": "Lightbulb",
       "enum": [
         "Lightbulb",
         "Arrow",
@@ -38,6 +40,7 @@
     },
     "Icon2": {
       "type": "enumeration",
+      "default": "Arrow",
       "enum": [
         "Lightbulb",
         "Arrow",
@@ -49,6 +52,7 @@
     },
     "Icon3": {
       "type": "enumeration",
+      "default": "Info",
       "enum": [
         "Lightbulb",
         "Arrow",
