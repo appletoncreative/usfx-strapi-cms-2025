@@ -447,13 +447,13 @@ export interface ApiCareerDescriptionPageCareerDescriptionPage
   };
 }
 
-export interface ApiCareerPathwaysPageCareerPathwaysPage
+export interface ApiCareerPathwaysCareerPathways
   extends Struct.SingleTypeSchema {
-  collectionName: 'career_pathways_pages';
+  collectionName: 'career_pathwayss';
   info: {
-    displayName: 'Career Pathways Page';
-    pluralName: 'career-pathways-pages';
-    singularName: 'career-pathways-page';
+    displayName: 'Career Pathways';
+    pluralName: 'career-pathwayss';
+    singularName: 'career-pathways';
   };
   options: {
     draftAndPublish: true;
@@ -470,14 +470,14 @@ export interface ApiCareerPathwaysPageCareerPathwaysPage
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
-      'api::career-pathways-page.career-pathways-page'
+      'api::career-pathways.career-pathways'
     > &
       Schema.Attribute.Private;
     MapIframeUrl: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     SeoDescription: Schema.Attribute.Text;
     SeoTitle: Schema.Attribute.String;
-    Title: Schema.Attribute.String & Schema.Attribute.Required;
+    Title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1474,7 +1474,7 @@ declare module '@strapi/strapi' {
       'admin::user': AdminUser;
       'api::career-description-category.career-description-category': ApiCareerDescriptionCategoryCareerDescriptionCategory;
       'api::career-description-page.career-description-page': ApiCareerDescriptionPageCareerDescriptionPage;
-      'api::career-pathways-page.career-pathways-page': ApiCareerPathwaysPageCareerPathwaysPage;
+      'api::career-pathways.career-pathways': ApiCareerPathwaysCareerPathways;
       'api::center-news.center-news': ApiCenterNewsCenterNews;
       'api::dashboard.dashboard': ApiDashboardDashboard;
       'api::global.global': ApiGlobalGlobal;
