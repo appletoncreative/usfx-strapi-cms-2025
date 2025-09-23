@@ -385,10 +385,11 @@ export interface ApiCareerDescriptionCategoryCareerDescriptionCategory
     draftAndPublish: true;
   };
   attributes: {
-    career_description_page: Schema.Attribute.Relation<
-      'oneToOne',
+    career_description_pages: Schema.Attribute.Relation<
+      'oneToMany',
       'api::career-description-page.career-description-page'
     >;
+    Content: Schema.Attribute.Blocks;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -419,13 +420,14 @@ export interface ApiCareerDescriptionPageCareerDescriptionPage
   };
   attributes: {
     career_description_category: Schema.Attribute.Relation<
-      'oneToOne',
+      'manyToOne',
       'api::career-description-category.career-description-category'
     >;
     Content1: Schema.Attribute.Blocks;
     Content2: Schema.Attribute.Blocks;
     Content3: Schema.Attribute.Blocks;
     ContentMain: Schema.Attribute.Blocks;
+    ContentRequirements: Schema.Attribute.Blocks;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -439,6 +441,7 @@ export interface ApiCareerDescriptionPageCareerDescriptionPage
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    Slug: Schema.Attribute.UID<'Title'> & Schema.Attribute.Required;
     Title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &

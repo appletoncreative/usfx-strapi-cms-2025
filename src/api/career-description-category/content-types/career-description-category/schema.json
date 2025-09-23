@@ -14,11 +14,14 @@
     "Title": {
       "type": "string"
     },
-    "career_description_page": {
+    "career_description_pages": {
       "type": "relation",
-      "relation": "oneToOne",
+      "relation": "oneToMany",
       "target": "api::career-description-page.career-description-page",
-      "inversedBy": "career_description_category"
+      "mappedBy": "career_description_category"
+    },
+    "Content": {
+      "type": "blocks"
     }
   }
 }

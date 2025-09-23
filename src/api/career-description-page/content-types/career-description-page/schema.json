@@ -14,7 +14,15 @@
     "Title": {
       "type": "string"
     },
+    "Slug": {
+      "type": "uid",
+      "targetField": "Title",
+      "required": true
+    },
     "ContentMain": {
+      "type": "blocks"
+    },
+    "ContentRequirements": {
       "type": "blocks"
     },
     "Icon1": {
@@ -55,9 +63,9 @@
     },
     "career_description_category": {
       "type": "relation",
-      "relation": "oneToOne",
+      "relation": "manyToOne",
       "target": "api::career-description-category.career-description-category",
-      "mappedBy": "career_description_page"
+      "inversedBy": "career_description_pages"
     }
   }
 }
