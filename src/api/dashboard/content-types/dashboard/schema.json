@@ -32,6 +32,32 @@
     },
     "SeoDescription": {
       "type": "text"
+    },
+    "CountyMapDataCSV": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "WorkforceTrendsDataCSV": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "ContentGlossary": {
+      "type": "blocks"
+    },
+    "ContentDataMethods": {
+      "type": "blocks"
     }
   }
 }

@@ -539,6 +539,11 @@ export interface ApiDashboardDashboard extends Struct.SingleTypeSchema {
       'images' | 'files' | 'videos' | 'audios'
     >;
     Content: Schema.Attribute.Blocks;
+    ContentDataMethods: Schema.Attribute.Blocks;
+    ContentGlossary: Schema.Attribute.Blocks;
+    CountyMapDataCSV: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -555,6 +560,9 @@ export interface ApiDashboardDashboard extends Struct.SingleTypeSchema {
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    WorkforceTrendsDataCSV: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
   };
 }
 
@@ -570,9 +578,6 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
     draftAndPublish: false;
   };
   attributes: {
-    CountyMapDataCSV: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios'
-    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -588,9 +593,6 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    WorkforceTrendsDataCSV: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios'
-    >;
   };
 }
 

@@ -19,26 +19,6 @@
     "siteDescription": {
       "type": "text",
       "required": true
-    },
-    "CountyMapDataCSV": {
-      "type": "media",
-      "multiple": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
-    },
-    "WorkforceTrendsDataCSV": {
-      "type": "media",
-      "multiple": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
     }
   }
 }
