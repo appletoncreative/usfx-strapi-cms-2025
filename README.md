@@ -65,3 +65,11 @@ npm run strapi transfer -- -- --to <destinationURL> --to-token <transferToken> -
 # transfer content to strapi account, must be deployed through git first as the files must match or it will fail.
 
 npm run strapi transfer -- -- --to https://necessary-friend-a78a94d9ff.strapiapp.com/admin/ --to-token 5d31e6609fd5d51b38cc859662a2990d53caa764a1141691c60c5cbf0257e67f2d78678cd1684fd1299bb2c228c5dfd39a71fe45d2e403dc312d4a1993fdef694fcdd8012bd652d9ae07b0278ba11c8f9d912898a2d0a6780a006dfa07db2889478b0ea88d84a35189301d200e3172f84a1fa179aa838c5b5bffdae6e7c01f24 --force
+
+npm run strapi transfer -- --to https://necessary-friend-a78a94d9ff.strapiapp.com/admin/ --to-token 5d31e6609fd5d51b38cc859662a2990d53caa764a1141691c60c5cbf0257e67f2d78678cd1684fd1299bb2c228c5dfd39a71fe45d2e403dc312d4a1993fdef694fcdd8012bd652d9ae07b0278ba11c8f9d912898a2d0a6780a006dfa07db2889478b0ea88d84a35189301d200e3172f84a1fa179aa838c5b5bffdae6e7c01f24 --force
+
+
+npm run strapi transfer -- --to https://necessary-friend-a78a94d9ff.strapiapp.com/admin/ --to-token 5d31e6609fd5d51b38cc859662a2990d53caa764a1141691c60c5cbf0257e67f2d78678cd1684fd1299bb2c228c5dfd39a71fe45d2e403dc312d4a1993fdef694fcdd8012bd652d9ae07b0278ba11c8f9d912898a2d0a6780a006dfa07db2889478b0ea88d84a35189301d200e3172f84a1fa179aa838c5b5bffdae6e7c01f24 --force
+
+strapi appleton transfer token
+0c5665c6d57348738c2177dba2e50d95b90abf031a3f39b0255cfcc77b50b9225d8b37ce5fc2a95625418a6cb167a2cad511897c145e19c7333942fa52f90992d88e88c8f4745734bf4ab73fc1e170f21b18ac5730920021e38d1c84b3a30df0e84dc8e556b90c682efc793f7908673a898004394a22c2a17bc3ea1433844da1
