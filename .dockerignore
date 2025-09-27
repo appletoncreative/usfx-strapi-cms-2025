@@ -1,0 +1,12 @@
+node_modules
+build
+#.tmp
+.cache
+#.env
+#.env.*
+!.env.example
+Dockerfile
+.dockerignore
+.DS_Store
+.vscode
+.idea
